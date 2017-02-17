@@ -65,10 +65,14 @@ China = [   "郊游",\
 #The Correct index
 Correct = []
 n = 0
+Error = 0
 Retry = 0
 
-print("Japan vocabulary chapter 24 --primary")
-mode = input("Please select test mode(JC or other)...\r\n")
+print("Japan vocabulary chapter 23 --primary")
+if len(Japan) != len(China) : 
+    print("China != Japan....")
+    while True : input()
+mode = input("Please select test mode...")
 #日文到中文
 if mode in ["JC"]:
     print ("Japan --> China")
@@ -90,6 +94,7 @@ if mode in ["JC"]:
             if Input == China[n]:
                 print ("!!!Right!!!")
                 print("Remain....",len(Japan) - len(Correct))
+                Retry = 0
                 input()
                 break
             else:
@@ -97,6 +102,7 @@ if mode in ["JC"]:
                 if Retry < 4:
                     pass
                 else:
+                    Error = Error + 1
                     print("!!!Error!!!!")
                     print(China[n])
                     input("Remember??????")
@@ -105,6 +111,9 @@ if mode in ["JC"]:
                     break
         if len(Correct) == len(Japan):
             print("!!!You finished..!!!!")
+            print("Error times is : ",Error)
+            print("\r\n"*15)
+            input()
             break
 else:
     print ("China --> Japan")
@@ -126,6 +135,7 @@ else:
             if Input == Japan[n]:
                 print ("!!!Right!!!")
                 print("Remain....",len(Japan) - len(Correct))
+                Retry = 0
                 input()
                 break
             else:
@@ -133,6 +143,7 @@ else:
                 if Retry < 4:
                     pass
                 else:
+                    Error = Error + 1
                     print("!!!Error!!!!")
                     print(Japan[n])
                     input("Remember??????")
@@ -141,6 +152,9 @@ else:
                     break
         if len(Correct) == len(Japan):
             print("!!!You finished..!!!!")
+            print("Error times is : ",Error)
+            print("\r\n"*15)
+            input()
             break
 
 
