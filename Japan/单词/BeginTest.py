@@ -33,7 +33,8 @@ def Display(num,mode):
                 else:
                     error.append(num)
                     print("!!!Error!!!!",China[num])
-                    Input = input("Spell it now!!!")
+                    print("-----------------Spell it now--------------------")
+                    Input = input()
                     if Input == China[num]:
                         print("Keep on......")
                     else:
@@ -56,7 +57,8 @@ def Display(num,mode):
                 else:
                     error.append(num)
                     print("!!!Error!!!!",Japan[num])
-                    Input = input("Spell it now!!!")
+                    print("-----------------Spell it now--------------------")
+                    Input = input()
                     if Input == Japan[num]:
                         print("Keep on......")
                     else:
