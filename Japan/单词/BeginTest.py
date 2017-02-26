@@ -34,11 +34,12 @@ def Display(num,mode):
                     error.append(num)
                     print("!!!Error!!!!",China[num])
                     print("-----------------Spell it now--------------------")
-                    Input = input()
-                    if Input == China[num]:
-                        print("Keep on......")
-                    else:
-                        print("!!!!idiot!!!!")
+                    while True:
+                        Input = input()
+                        if Input == China[num]:
+                            print("Keep on......")
+                        else:
+                            print("!!!!idiot!!!!")
                     Retry = 0
                     flag.remove(num)
                     break
@@ -58,17 +59,19 @@ def Display(num,mode):
                     error.append(num)
                     print("!!!Error!!!!",Japan[num])
                     print("-----------------Spell it now--------------------")
-                    Input = input()
-                    if Input == Japan[num]:
-                        print("Keep on......")
-                    else:
-                        print("!!!!idiot!!!!")
+                    while True:
+                        Input = input()
+                        if Input == Japan[num]:
+                            print("Keep on......")
+                        else:
+                            print("!!!!idiot!!!!")
                     Retry = 0
                     flag.remove(num)
                     break
 
 if __name__ == "__main__":
     chapter = int(input("Input the chapter you wanted..."))
+    if chapter == 20:from Card20 import *
     if chapter == 21:from Card21 import *
     if chapter == 22:from Card22 import *
     if chapter == 23:from Card23 import *

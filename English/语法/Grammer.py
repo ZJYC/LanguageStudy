@@ -12,7 +12,7 @@ Completion_question = [[0,"现在完成进行时:S+___+___+____",["have","been",
                        [0,"将来完成进行时:S+___+___+___+____",["will","have","been","Ving"]],\
                        [0,"现在完成时:S+___+___",["have","过去分词"]],\
                        [0,"过去完成时:S+___+___",["had","过去分词"]],\
-                       [0,"将来完成时:S+___+___+___",["will","had","过去分词"]],\
+                       [0,"将来完成时:S+___+___+___",["will","have","过去分词"]],\
                        [0,"现在进行时:S+___+___(am/is/are)",["be","Ving"]],\
                        [0,"过去进行时:S+___+___(was/were)",["be","Ving"]],\
                        [0,"将来进行时:S+___+___+___",["will","be","Ving"]],\
@@ -27,7 +27,7 @@ Completion_question = [[0,"现在完成进行时:S+___+___+____",["have","been",
                        [0,"he ___ ___ ___ waiting for you since you keeping talking to like this way:你一直这样说话我就不会等你了",["won't","have","been"]],\
                        [0,"he ___ ___ his hoseworks:他已经完成了作业",["have","finished"]],\
                        [0,"he ___ ___ his hoseworks before you visit me:在你看我之前，他已经完成了作业",["had","finished"]],\
-                       [0,"They will have finished the meeting by now:到现在，他们或许已经完成了会议",["will","have","finished"]],\
+                       [0,"They ___ ___ ___ the meeting by now:到现在，他们或许已经完成了会议",["will","have","finished"]],\
                        [0,"I ___ ___ to pick you up:我正过去接你",["am","coming"]],\
                        [0,"I ___ ___ a novel this morning:今天造成我在读报纸",["was","reading"]],\
                        [0,"At this time tommorrow,I ___ ___ ___ at home:明天的这个时候，我正在睡觉",["will","be","sleeping"]],\

@@ -1,0 +1,6 @@
+2017-02-26-10-22-24
+[0, '虚拟-于过去事实相反:if+___,主语+___+___', ['过去完成时', 'would', 'have-pp']]
+[0, '虚拟-于将来事实相反(含有万一之意  ):if+___+___,主语+___+___', ['should', 'V', 'would', 'V']]
+[0, 'They ___ ___ ___ the meeting by now:到现在，他们或许已经完成了会议', ['will', 'have', 'finished']]
+[0, 'he ___ ___ ___ waiting for you since you keeping talking to like this way:你一直这样说话我就不会等你了', ["won't", 'have', 'been']]
+
