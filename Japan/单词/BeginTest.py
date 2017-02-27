@@ -38,6 +38,7 @@ def Display(num,mode):
                         Input = input()
                         if Input == China[num]:
                             print("Keep on......")
+                            break
                         else:
                             print("!!!!idiot!!!!")
                     Retry = 0
@@ -63,6 +64,7 @@ def Display(num,mode):
                         Input = input()
                         if Input == Japan[num]:
                             print("Keep on......")
+                            break
                         else:
                             print("!!!!idiot!!!!")
                     Retry = 0
