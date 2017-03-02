@@ -73,6 +73,8 @@ def Display(num,mode):
 
 if __name__ == "__main__":
     chapter = int(input("Input the chapter you wanted..."))
+    if chapter == 17:from Card17 import *
+    if chapter == 18:from Card18 import *
     if chapter == 19:from Card19 import *
     if chapter == 20:from Card20 import *
     if chapter == 21:from Card21 import *
