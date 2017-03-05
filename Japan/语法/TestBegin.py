@@ -3,12 +3,10 @@ import random
 import time
 #------------------------------------------------------------------------------------
 def GetUniNum():
-    '''
-    get a random num...
-    '''
+    "获取唯一随机数"
     while True:
         if len(flag) == len(Completion_question):
-            return "OVER"
+            return None
         n = int(random.uniform(0,len(Completion_question)))
         if n in flag:
             pass
@@ -17,40 +15,34 @@ def GetUniNum():
             return n
 #------------------------------------------------------------------------------------
 def CompletionOnce(j):
-    '''
-    Test a Completion question,return the result to the caller...
-    '''
     if Completion_question[j][0] == 0:
         print("-------------------------------------------------------------------")
         print(Completion_question[j][1])
         print("-------------------------------------------------------------------")
-        answer = input("Your answer(splited by space):\r\n")
-        if Completion_question[j][2] == answer.split():
-            return True
-        else:
-            return False
+        answer = input("你的答案是(用空格区分):\r\n")
+        if Completion_question[j][2] == answer.split():return True
+        else:return False
 #------------------------------------------------------------------------------------
 error = []
 def Completion():
     while True:
         #Get random number
         n = GetUniNum()
-        if n == "OVER":break
+        if n == None:break
         retry = 0
         while True:
-            #test
             if CompletionOnce(n) == True:
-                print("----RIGHT----")
+                print("正确...")
                 break
             else:
                 retry = retry + 1
                 if retry >= 4:
-                    print("----ERROR----")
+                    print("错误...")
                     print(Completion_question[n])
                     error.append(Completion_question[n])
                     break
                 
-    print("Test finished...The following needed to reinforce...")
+    print("测试完成,如下需要加强...")
     for e in error:print(e)
     fo = open(filename,"a")
     try:

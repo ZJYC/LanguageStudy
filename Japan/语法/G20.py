@@ -6,16 +6,19 @@ import time
 #   1:
 #   2:
 #
-filename = "Chapter-19.txt"
-Completion_question = [[0,"动___ ___:表示否定的命令",["ないで","ください"]],\
-                       [0,"へやの かぎ を ___ ___:请别忘了房间钥匙",["わすれないで","ください"]],\
-                       [0,"むりを し ___ ___:请不要勉强",["ないで","ください"]],\
-                       [0,"动___ ___:表示必须,把ない替换成___ ___",["なければ","なりません","なければ","なりません"]],\
-                       [0,"りさんは きよう はやく かえら ___ ___:小李今天必须早点回家",["なければ","なりません"]],\
-                       [0,"この くすりは まいにち のま ___ ___:这个要必须每天吃",["なければ","なりません"]],\
-                       [0,"动___ ___:表示不做某事也可以,将ない替换成___ ___",["なくても","いいです","なくても","いいです"]],\
-                       [0,"あした は ざんぎようし ___ ___:明天不加班也行",["なくても","いいです"]],\
-                       [0,"あわて ___ ___:不要慌慌张张的！",["なくても","いいですよ"]],\
+filename = "Chapter-20.txt"
+Completion_question = [[0,"名___动(基本型)___ ___:表示能力,肯定的情况下回答___,否定的情况下回答___",["は","ことが","できます","できます","できません"]],\
+                       [0,"スミスさんは ピアノを ___ ___ ___:史密斯先生会弹钢琴",["ひく","ことが","できます"]],\
+                       [0,"もりさんは ちゆうかりようりを ___ ___ ___か:森先生会做中国菜吗",["つくる","ことが","できます"]],\
+                       [0,"名___动(基本型)___:当谓语部分的内容是一种动作、行为时使用这个句型",["は","ことです"]],\
+                       [0,"わたしのしゆみは きつてを ___ ___:我的爱好是集邮",["あつめる","ことです"]],\
+                       [0,"おうさんの ときぎは こきゆうを ___ ___:小王的特长是拉胡琴",["ひく","ことです"]],\
+                       [0,"动(基本型)+___:表示一个动作在另一个动作之前发生时",["まえに"]],\
+                       [0,"まいにち ねる ___ シヤワーを あびます:每天睡觉前淋浴",["まえに"]],\
+                       [0,"疑问词'いつ','どこ','だれ'等词后加___表示某时,某地,某人的意思",["か"]],\
+                       [0,"へやに だれ___ いますか:房间里有人吗",["か"]],\
+                       [0,"___:表示没有足够的把握'よ''ね'",["よね"]],\
+                       [0,"この かさは もりさんのですか___:这把伞是森先生的吧",["よね"]],\
                        
         ]
 #------------------------------------------------------------------------------------
@@ -23,73 +26,6 @@ flag = []
 
 
 
-def GetUniNum():
-    while True:
-        if len(flag) == len(Completion_question):
-            return "OVER"
-        n = int(random.uniform(0,len(Completion_question)))
-        if n in flag:
-            pass
-        else:
-            flag.append(n)
-            return n
-#------------------------------------------------------------------------------------
-def CompletionOnce(j):
-    "Test a Completion question,return the result to the caller..."
-    if Completion_question[j][0] == 0:
-        print("-------------------------------------------------------------------")
-        print(Completion_question[j][1])
-        print("-------------------------------------------------------------------")
-        answer = input("Your answer(splited by space):\r\n")
-        if Completion_question[j][2] == answer.split():
-            return True
-        else:
-            return False
-#------------------------------------------------------------------------------------
-error = []
-def Completion():
-    while True:
-        #Get random number
-        n = GetUniNum()
-        if n == "OVER":break
-        retry = 0
-        while True:
-            #test
-            if CompletionOnce(n) == True:
-                print("----RIGHT----")
-                break
-            else:
-                retry = retry + 1
-                if retry >= 4:
-                    print("----ERROR----")
-                    print(Completion_question[n])
-                    error.append(Completion_question[n])
-                    break
-                
-    print("Test finished...The following needed to reinforce...")
-    for e in error:print(e)
-    fo = open(filename,"a")
-    try:
-        fo.write(time.strftime("%Y-%m-%d-%H-%M-%S",time.localtime(time.time())))
-        fo.write("\r\n")
-        for e in error:fo.write(str(e) + "\r\n")
-        fo.write("\r\n")
-    finally:
-        fo.close()
-        input()
-
-#------------------------------------------------------------------------------------
-if __name__ == "__main__":
-    chapter = int(input("Input the chapter you wanted..."))
-    if chapter == 17:from Card17 import *
-    if chapter == 18:from Card18 import *
-    if chapter == 19:from Card19 import *
-    if chapter == 20:from Card20 import *
-    if chapter == 21:from Card21 import *
-    if chapter == 22:from Card22 import *
-    if chapter == 23:from Card23 import *
-    if chapter == 24:from Card24 import *
-    Completion()
 
 
 
