@@ -71,7 +71,7 @@ Japan = [   "そうさ",\
             "まだ",\
             "すぐ",\
             "ずいぶん",\
-            "はら",\
+            "ほら",\
             "につちゆうでんき",\
             "あたまがいい"]
 China = [   "操作",\
@@ -147,7 +147,7 @@ China = [   "操作",\
 filename = "Chapter16_result.txt"
 flag = []
 error = []
-
+cnt = [0]*len(Japan)
 
 
 

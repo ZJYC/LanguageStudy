@@ -62,7 +62,7 @@ China = [   "滑雪场",\
 filename = "Chapter22_result.txt"
 flag = []
 error = []
-
+cnt = [0]*len(Japan)
 
 
 

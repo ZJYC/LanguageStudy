@@ -67,7 +67,7 @@ China = [   "郊游",\
 filename = "Chapter24_result.txt"
 flag = []
 error = []
-
+cnt = [0]*len(Japan)
 
 
 

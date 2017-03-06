@@ -59,7 +59,7 @@ China = [   "语言",\
 filename = "Chapter21_result.txt"
 flag = []
 error = []
-
+cnt = [0]*len(Japan)
 
 
 

@@ -87,7 +87,7 @@ China = [   "爱好",\
 filename = "Chapter20_result.txt"
 flag = []
 error = []
-
+cnt = [0]*len(Japan)
 
 
 

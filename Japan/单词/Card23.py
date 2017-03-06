@@ -47,7 +47,7 @@ China = [   "周末",\
 filename = "Chapter23_result.txt"
 flag = []
 error = []
-
+cnt = [0]*len(Japan)
 
 
 
