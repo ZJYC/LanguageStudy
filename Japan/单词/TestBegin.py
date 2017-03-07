@@ -82,7 +82,7 @@ def TestOnce(num,mode):
                             print("按任意键继续...")
                             break
                         else:
-                            print("!!ほんとう ばかもの ですか!!")
+                            print("!!ばかもの ですか!!")
                     Retry = 0
                     flag.remove(num)
                     break
@@ -108,7 +108,7 @@ def TestOnce(num,mode):
                             print("按任意键继续...")
                             break
                         else:
-                            print("!!ほんとう ばかもの ですか!!")
+                            print("!!ばかもの ですか!!")
                     Retry = 0
                     flag.remove(num)
                     break

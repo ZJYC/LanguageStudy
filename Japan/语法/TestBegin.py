@@ -57,6 +57,7 @@ def Completion():
 #------------------------------------------------------------------------------------
 if __name__ == "__main__":
     chapter = int(input("Input the chapter you wanted..."))
+    if chapter == 16:from G16 import *
     if chapter == 17:from G17 import *
     if chapter == 18:from G18 import *
     if chapter == 19:from G19 import *
