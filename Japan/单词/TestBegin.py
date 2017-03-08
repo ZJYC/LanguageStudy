@@ -65,6 +65,8 @@ def TestOnce(num,mode):
             print("日语单词是:",Japan[num])
             Input = input()
             if Input in China[num] and Input != "":
+                if Input != China[num]:
+                    print("完整的答案是:---",China[num],"---")
                 print("!!正确!!","剩余词条数",len(Japan) - len(flag))
                 input("按任意键继续...")
                 break
@@ -91,6 +93,8 @@ def TestOnce(num,mode):
             print("中文单词是:",China[num])
             Input = input()
             if Input in Japan[num] and Input != "":
+                if Input != Japan[num]:
+                    print("完整的答案是:---",Japan[num],"---")
                 print("!!正确!!","剩余词条数",len(Japan) - len(flag))
                 input("按任意键继续...")
                 break
@@ -116,7 +120,8 @@ def TestOnce(num,mode):
 if __name__ == "__main__":
     chapter = int(input("请输入你要学习的章节(例如17)..."))
     #------------------------------------------------------
-    
+
+    if chapter == 14:from Card14 import *
     if chapter == 15:from Card15 import *
     if chapter == 16:from Card16 import *
     if chapter == 17:from Card17 import *
