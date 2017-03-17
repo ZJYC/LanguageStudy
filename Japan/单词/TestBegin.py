@@ -30,7 +30,7 @@ def PrintError():
     "打印错误词条"
     print("本次测试分数：",GetScore(),"明细如下:")
     print("-------------------------------------------------------")
-    for e in error:print(China[e]," : ",Japan[e],"ERROR : ",cnt[e])
+    for e in error:print(China[e],"\t",Japan[e],"\t",cnt[e])
     print("-------------------------------------------------------")
 
 #---------------------------------------------------------
@@ -50,7 +50,7 @@ def StorageError():
         fo.write(time.strftime("%Y-%m-%d-%H-%M-%S",time.localtime(time.time())))
         fo.write("\r\n分数:" + str(GetScore()) + "\r\n")
         fo.write("\r\n" + "Mode : " + str(mode) + "\r\n")
-        for e in error:fo.write("      " + China[e] + " : " + Japan[e] + "ERROR : " + str(cnt[e]) + "\r\n")
+        for e in error:fo.write("      " + China[e] + "\t" + Japan[e] + "\t" + str(cnt[e]) + "\r\n")
         fo.write("\r\n------------------------------------------------------------\r\n")
     finally:
         fo.close()
