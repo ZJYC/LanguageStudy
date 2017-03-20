@@ -121,6 +121,7 @@ if __name__ == "__main__":
     chapter = int(input("请输入你要学习的章节(例如17)..."))
     #------------------------------------------------------
     
+    if chapter == 6:from Card6 import *
     if chapter == 7:from Card7 import *
     if chapter == 8:from Card8 import *
     if chapter == 9:from Card9 import *
