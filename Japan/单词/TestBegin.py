@@ -28,9 +28,9 @@ def LogError(num):
 #---------------------------------------------------------
 def PrintError():
     "打印错误词条"
-    print("本次测试分数：",GetScore(),"明细如下:")
+    print("本次测试分数：",str(GetScore()).center(10),"明细如下:")
     print("-------------------------------------------------------")
-    for e in error:print(China[e],"\t",Japan[e],"\t",cnt[e])
+    for e in error:print(str(China[e]).ljust(20),str(Japan[e]).ljust(20),str(cnt[e]).ljust(5))
     print("-------------------------------------------------------")
 
 #---------------------------------------------------------
@@ -48,9 +48,9 @@ def StorageError():
     try:
         fo.write("\r\n------------------------------------------------------------\r\n")
         fo.write(time.strftime("%Y-%m-%d-%H-%M-%S",time.localtime(time.time())))
-        fo.write("\r\n分数:" + str(GetScore()) + "\r\n")
+        fo.write("\r\n分数:" + str(GetScore()).center(10))
         fo.write("\r\n" + "Mode : " + str(mode) + "\r\n")
-        for e in error:fo.write("      " + China[e] + "\t" + Japan[e] + "\t" + str(cnt[e]) + "\r\n")
+        for e in error:fo.write(str(China[e]).ljust(20) + str(Japan[e]).ljust(20) + str(cnt[e]).ljust(5) + "\r\n")
         fo.write("\r\n------------------------------------------------------------\r\n")
     finally:
         fo.close()
@@ -120,7 +120,8 @@ def TestOnce(num,mode):
 if __name__ == "__main__":
     chapter = int(input("请输入你要学习的章节(例如17)..."))
     #------------------------------------------------------
-    
+
+    if chapter == 0:from Card0 import *
     if chapter == 6:from Card6 import *
     if chapter == 7:from Card7 import *
     if chapter == 8:from Card8 import *
