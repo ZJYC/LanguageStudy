@@ -122,6 +122,7 @@ if __name__ == "__main__":
     #------------------------------------------------------
 
     if chapter == 0:from Card0 import *
+    if chapter == 4:from Card4 import *
     if chapter == 5:from Card5 import *
     if chapter == 6:from Card6 import *
     if chapter == 7:from Card7 import *
