@@ -3,11 +3,9 @@
 def get_uni_num():
     "获取随机数，确保本数字只出现一次"
     while True:
-        if len(flag) == len(Japan):
-            return None
+        if len(flag) == len(Japan):return None
         n = int(random.uniform(0,len(Japan)))
-        if n in flag:
-            pass
+        if n in flag:pass
         else:
             flag.append(n)
             break
@@ -20,8 +18,7 @@ def LogError(num):
     #记录错误次数
     cnt[num] = cnt[num] + 1
     
-    if num in error:
-        return 1
+    if num in error:return 1
     else:
         error.append(num)
         return None
@@ -72,8 +69,7 @@ def TestOnce(num,mode):
                 break
             else:
                 retry = retry + 1
-                if retry < 4:
-                    pass
+                if retry < 4:pass
                 else:
                     LogError(num)
                     print("!!!错误!!!","答案是:",China[num])
@@ -83,8 +79,7 @@ def TestOnce(num,mode):
                         if Input in China[num] and Input != "":
                             print("按任意键继续...")
                             break
-                        else:
-                            print("!!ばかもの ですか!!")
+                        else:print("!!ばかもの ですか!!")
                     Retry = 0
                     flag.remove(num)
                     break
@@ -100,8 +95,7 @@ def TestOnce(num,mode):
                 break
             else:
                 retry = retry + 1
-                if retry < 4:
-                    pass
+                if retry < 4:pass
                 else:
                     LogError(num)
                     print("!!!错误!!!","答案是:",Japan[num])
@@ -111,8 +105,7 @@ def TestOnce(num,mode):
                         if Input in Japan[num] and Input != "":
                             print("按任意键继续...")
                             break
-                        else:
-                            print("!!ばかもの ですか!!")
+                        else:print("!!ばかもの ですか!!")
                     Retry = 0
                     flag.remove(num)
                     break
