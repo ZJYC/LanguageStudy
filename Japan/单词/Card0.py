@@ -9,10 +9,10 @@ import random
 import time
 
 
-Japan = [   "らいげつ",\
-            "せんげつ"]
-China = [   "下个月",\
-            "上个月"]
+Japan = [   "1我们",\
+            "2银河系"]
+China = [   "1我们",\
+            "2银河系"]
 filename = "Chapter0_result.txt"
 flag = []
 error = []
