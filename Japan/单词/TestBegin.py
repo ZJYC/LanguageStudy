@@ -1,4 +1,6 @@
 
+import time
+
 #---------------------------------------------------------
 def get_uni_num():
     "获取随机数，确保本数字只出现一次"
@@ -25,10 +27,13 @@ def LogError(num):
 #---------------------------------------------------------
 def PrintError():
     "打印错误词条"
+    global TimeStart
+    global TimeEnd
+    print("测试用时:%s"%time.strftime("%M-%S",time.localtime(TimeEnd-TimeStart)))
     print("本次测试分数：",str(GetScore()).center(10),"明细如下:")
-    print("-------------------------------------------------------")
+    print("-----------------------------------------------------------------------------------------")
     for e in error:print(str(China[e]).ljust(30-len(China[e])),str(Japan[e]).ljust(30-len(Japan[e])),str(cnt[e]).ljust(5))
-    print("-------------------------------------------------------")
+    print("-----------------------------------------------------------------------------------------")
 
 #---------------------------------------------------------
 def GetScore():
@@ -43,12 +48,13 @@ def StorageError():
     
     fo = open(filename,"a")
     try:
-        fo.write("\r\n------------------------------------------------------------\r\n")
+        fo.write("\r\n-----------------------------------------------------------------------------------------\r\n")
         fo.write(time.strftime("%Y-%m-%d-%H-%M-%S",time.localtime(time.time())))
+        fo.write("\r\n测试用时:%s"%time.strftime("%M-%S",time.localtime(TimeEnd-TimeStart)))
         fo.write("\r\n分数:" + str(GetScore()).center(10))
         fo.write("\r\n" + "Mode : " + str(mode) + "\r\n")
         for e in error:fo.write(str(China[e]).ljust(30-len(China[e])) + str(Japan[e]).ljust(30-len(Japan[e])) + str(cnt[e]).ljust(5) + "\r\n")
-        fo.write("\r\n------------------------------------------------------------\r\n")
+        fo.write("-----------------------------------------------------------------------------------------\r\n")
     finally:
         fo.close()
 
@@ -109,11 +115,13 @@ def TestOnce(num,mode):
                     Retry = 0
                     flag.remove(num)
                     break
-
+TimeStart,TimeEnd=0,0
 if __name__ == "__main__":
+    #global TimeStart
+    #global TimeEnd
+    TimeStart = time.time()
     chapter = int(input("请输入你要学习的章节(例如17)..."))
     #------------------------------------------------------
-
     if chapter == 0:from Card0 import *
     if chapter == 1:from Card1 import *
     if chapter == 2:from Card2 import *
@@ -168,12 +176,14 @@ if __name__ == "__main__":
         num = get_uni_num()
         res = TestOnce(num,mode)
         if res == 1:
+            TimeEnd=time.time()
             if len(error) != 0:
                 print("很好,您已经完成了本章测试...加油！！")
                 PrintError()
                 StorageError()
                 input("本次测试完毕,按任意键退出...欢迎再来...")
             else:input("恭喜您完美完成测试,按任意键退出...欢迎再来...")
+            print("测试用时:%s"%time.strftime("%M-%S",time.localtime(TimeEnd-TimeStart)))
             break
         else:
             pass
