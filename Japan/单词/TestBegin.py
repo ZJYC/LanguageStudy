@@ -120,7 +120,7 @@ if __name__ == "__main__":
     #global TimeStart
     #global TimeEnd
     TimeStart = time.time()
-    chapter = int(input("请输入你要学习的章节(例如17)..."))
+    chapter = int(input("请输入你要学习的章节(例如17)...\r\n"))
     #------------------------------------------------------
     if chapter == 0:from Card0 import *
     if chapter == 1:from Card1 import *
