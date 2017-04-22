@@ -5,18 +5,10 @@
 
 
 
-import random
-import time
+Words = [   "1.2.3",\
+            "4.5.6"]
 
-
-Japan = [   "1我们",\
-            "2银河系"]
-China = [   "1我们",\
-            "2银河系"]
-filename = "Chapter0_result.txt"
-flag = []
-error = []
-cnt = [0]*len(Japan)
+filename = "Chapter012341243_result.txt"
 
 
 
