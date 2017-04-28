@@ -29,7 +29,7 @@ def PrintError():
     "打印错误词条"
     global TimeStart
     global TimeEnd
-    print("测试用时:%s"%time.strftime("%M-%S",time.localtime(TimeEnd-TimeStart)))
+    print("测试用时:%s"%time.strftime("%H-%M-%S",time.localtime(TimeEnd-TimeStart)))
     print("本次测试分数：",str(GetScore()).center(10),"明细如下:")
     print("-----------------------------------------------------------------------------------------")
     for e in error:print(str(China[e]).ljust(30-len(China[e])),str(Japan[e]).ljust(30-len(Japan[e])),str(cnt[e]).ljust(5))
@@ -50,7 +50,7 @@ def StorageError():
     try:
         fo.write("\r\n-----------------------------------------------------------------------------------------\r\n")
         fo.write(time.strftime("%Y-%m-%d-%H-%M-%S",time.localtime(time.time())))
-        fo.write("\r\n测试用时:%s"%time.strftime("%M-%S",time.localtime(TimeEnd-TimeStart)))
+        fo.write("\r\n测试用时:%s"%time.strftime("%H-%M-%S",time.localtime(TimeEnd-TimeStart)))
         fo.write("\r\n分数:" + str(GetScore()).center(10))
         fo.write("\r\n" + "Mode : " + str(mode) + "\r\n")
         for e in error:fo.write(str(China[e]).ljust(30-len(China[e])) + str(Japan[e]).ljust(30-len(Japan[e])) + str(cnt[e]).ljust(5) + "\r\n")
@@ -184,7 +184,7 @@ if __name__ == "__main__":
                 StorageError()
                 input("本次测试完毕,按任意键退出...欢迎再来...")
             else:input("恭喜您完美完成测试,按任意键退出...欢迎再来...")
-            print("测试用时:%s"%time.strftime("%M-%S",time.localtime(TimeEnd-TimeStart)))
+            print("测试用时:%s"%time.strftime("%H-%M-%S",time.localtime(TimeEnd-TimeStart)))
             break
         else:
             pass
