@@ -24,6 +24,8 @@ class Calculate():
             return None
     def ReturnToPool(self,ReturnedValue):
         self.RandomPool.append(ReturnedValue)
+    def GetRemain(self):
+        return len(self.RandomPool)
 
 #-----------------------------------------------------------------------------------#
 class Error(Calculate):
@@ -36,7 +38,17 @@ class Error(Calculate):
     def Show(self):
         for i,e in enumerate(self.ErrorMap):
             if e != 0:
-                print(str(Words[i]).ljust(40),str(e).center(5))
+                SplitedStr=str(Words[i]).split(".")
+                PianJia,PingJia,HanZi=0,0,0
+                if len(SplitedStr) == 2:
+                    PianJia=SplitedStr[0]
+                    PingJia=None
+                    HanZi=SplitedStr[1]
+                if len(SplitedStr) == 3:
+                    PianJia=SplitedStr[0]
+                    PingJia=SplitedStr[1]
+                    HanZi=SplitedStr[2]
+                print(str(PianJia).ljust(40),str(PingJia).ljust(40-len(PingJia)),str(HanZi).ljust(40-len(HanZi)),str(e).center(5))
     def ShowAll(self):
         print("Time consume:%s"%time.strftime("%M-%S",time.localtime(self.TimeConsume())))
         print("Score:%s"%str(self.Score(self.ErrorMap)).center(10),"明细如下:")
@@ -88,17 +100,26 @@ class Test(Error):
             HanZi=SplitedStr[2]
         if TestMode == 2:TestMode=random.choice([0,1])
         if TestMode == 0:
-            if PingJia != None:print("\r\n"+"PianJia:{%s},Please input PingJia and HanZi".center(60,'-')%PianJia)
+            if PingJia != None:print("\r\n"+"PianJia:{%s},Please input HanZi".center(60,'-')%PianJia)
             else:print("\r\n"+"PianJia:{%s},Please Inpute HanZi".center(60,'-')%PianJia)
             for i in list(range(1,4)):
                 Input=str(input())
-                if Input in PingJia+HanZi and len(Input) != 0:
-                    print("You do a good work".center(60,'*'));return True
+                if Input in HanZi and len(Input) != 0:
+                    print("You do a good work".center(60,'*'));
+                    print("\r\n"+"PianJia:{%s} PingJia:{%s} HanZi:{%s}".center(60,'-')%(PianJia,PingJia,HanZi))
+                    print("Remain...%s"%GetRemain())
+                    return True
                 else:
                     print("Try again".center(60,'*'))
             else:
                 print("\r\n"+"You need to work harder".center(60,'*'));
                 print("\r\n"+"PianJia:{%s} PingJia:{%s} HanZi:{%s}".center(60,'-')%(PianJia,PingJia,HanZi))
+                while True:
+                    Input=str(input("Input again..."))
+                    if Input in HanZi and len(Input) != 0:
+                        return False
+                    else:
+                        print("WTF")
                 return False
         if TestMode == 1:
             if PingJia != None:print("\r\n"+"HanZi:{%s},Please input PianJia and PingJia".center(60,'-')%HanZi)
@@ -106,7 +127,9 @@ class Test(Error):
             for i in list(range(0,4)):
                 Input=str(input())
                 if Input in PianJia+PingJia and len(Input) != 0:
-                    print("You do a good work".center(60,'*'));return True
+                    print("You do a good work".center(60,'*'));
+                    print("Remain...%s"%GetRemain())
+                    return True
                 else:
                     print("Try again".center(60,'*'))
             else:
@@ -132,35 +155,7 @@ class Test(Error):
                 
 if __name__ == "__main__":
     Chapter=int(input("请输入你要学习的章节(例如17)...\r\n"))
-    if Chapter == 0:from Card0 import *
-    if Chapter == 1:from Card1 import *
-    if Chapter == 2:from Card2 import *
-    if Chapter == 3:from Card3 import *
-    if Chapter == 4:from Card4 import *
-    if Chapter == 5:from Card5 import *
-    if Chapter == 6:from Card6 import *
-    if Chapter == 7:from Card7 import *
-    if Chapter == 8:from Card8 import *
-    if Chapter == 9:from Card9 import *
-    if Chapter == 10:from Card10 import *
-    if Chapter == 11:from Card11 import *
-    if Chapter == 12:from Card12 import *
-    if Chapter == 13:from Card13 import *
-    if Chapter == 14:from Card14 import *
-    if Chapter == 15:from Card15 import *
-    if Chapter == 16:from Card16 import *
-    if Chapter == 17:from Card17 import *
-    if Chapter == 18:from Card18 import *
-    if Chapter == 19:from Card19 import *
-    if Chapter == 20:from Card20 import *
-    if Chapter == 21:from Card21 import *
-    if Chapter == 22:from Card22 import *
-    if Chapter == 23:from Card23 import *
-    if Chapter == 24:from Card24 import *
-    if Chapter == 25:from Card25 import *
-    if Chapter == 26:from Card26 import *
-    if Chapter == 27:from Card27 import *
-    if Chapter == 28:from Card28 import *
+    if Chapter == 29:from CardNew29 import *
     if len(Words)==0:
         print("Zero Length...Please check again...");
         while(True):input()
