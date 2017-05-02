@@ -5,10 +5,16 @@
 
 
 
-Words = [   "1.2.3",\
-            "4.5.6"]
+import random
+import time
 
-filename = "Chapter012341243_result.txt"
+
+Japan = [   "マフラー"]
+China = [   "围巾"]
+filename = "Chapter0_result.txt"
+flag = []
+error = []
+cnt = [0]*len(Japan)
 
 
 
