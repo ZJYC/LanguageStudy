@@ -162,6 +162,7 @@ if __name__ == "__main__":
     if chapter == 37:from Card37 import *
     if chapter == 38:from Card38 import *
     if chapter == 39:from Card39 import *
+    if chapter == 40:from Card40 import *
     
     #------------------------------------------------------
     if len(China) != len(Japan):
